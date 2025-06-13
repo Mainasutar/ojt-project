@@ -1,6 +1,6 @@
 // C:/OJT-project/src/App.jsx
 
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header/Header';
@@ -18,9 +18,25 @@ import NotFoundPage from "./pages/NotFoundPage"; // Corrected path
 // Import the main global CSS file from the src/ folder
 import './index.css';
 import ChatbotComponent from 'c:/Users/Admin/Downloads/chatboat-project/chatboat-project/chatboat-app/src/components/Chatbot/ChatbotComponents';
+import DeveloperInfoPopup from './components/DeveloperInfo/DeveloperInfoPopup';
 
 function App() {
+  const [showPopup, setShowPopup] = useState(true);
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
   return (
+    <>
+    <div>
+        {/* Your main application content */}
+        <DeveloperInfoPopup
+          show={showPopup}
+          onClose={handleClosePopup}
+          studentName="Maina Omprakash Suthar"
+          studentPhotoUrl="/images/maina.jpg" // Path to their photo
+          uniqueMessage="Learned so much during this OJT! This app showcases my independent coding and deployment skills"
+        />
+      </div>
     <Router>
       <Header />
       <main>
@@ -36,6 +52,7 @@ function App() {
       <ChatbotComponent/>
       <Footer />
     </Router>
+    </>
   );
 }
 
