@@ -17,8 +17,8 @@ import NotFoundPage from "./pages/NotFoundPage"; // Corrected path
 
 // Import the main global CSS file from the src/ folder
 import './index.css';
-import ChatbotComponent from 'c:/Users/Admin/Downloads/chatboat-project/chatboat-project/chatboat-app/src/components/Chatbot/ChatbotComponents';
 import DeveloperInfoPopup from './components/DeveloperInfo/DeveloperInfoPopup';
+import ChatbotComponent from './components/Chatbot/ChatbotComponents';
 
 function App() {
   const [showPopup, setShowPopup] = useState(true);
